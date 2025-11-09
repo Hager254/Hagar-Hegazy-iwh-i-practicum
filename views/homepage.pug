@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet" href="/css/style.css")
+  body
+    .container
+      h1= title
+      p
+        a(href="/update-cobj") Add to this table
+      if pets && pets.length
+        table
+          thead
+            tr
+              th Name
+              th Bio
+              th Age
+          tbody
+            each pet in pets
+              tr
+                td= pet.properties.name
+                td= pet.properties.bio || '—'
+                td= pet.properties.age || '—'
+      else
+        p No pets found.
